@@ -47,7 +47,7 @@ public class Matrix implements Serializable{
      * @param param Matrix
      * @param path file location
      */
-    public static void writeToFile(Matrix param, String path) {
+    public static void writeToFile(Matrix param, String path) throws IOException {
 
         StringBuilder data = new StringBuilder();
         for (int i=0; i<param.getRowsCount();i++){
@@ -65,7 +65,8 @@ public class Matrix implements Serializable{
             writer.close();
         }
         catch (IOException e){
-            System.err.println(e);
+            //e.printStackTrace();
+            throw e;
         }
     }
 
@@ -74,7 +75,7 @@ public class Matrix implements Serializable{
      * @param path file location
      * @return Matrix
      */
-    public static Matrix readFromFile(String path) {
+    public static Matrix readFromFile(String path) throws IOException {
 
         List<List<String>> lines = new ArrayList<List<String>>();
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
@@ -84,7 +85,8 @@ public class Matrix implements Serializable{
                 lines.add(Arrays.asList(data.split(" ")));
             }
         } catch (IOException e) {
-            System.err.println(e);
+            //e.printStackTrace();
+            throw e;
         }
 
         Matrix res = new Matrix(lines.size(), lines.get(0).size());
@@ -96,6 +98,15 @@ public class Matrix implements Serializable{
         }
 
         return res;
+    }
+
+    public static void writeToConsole(Matrix m){
+        for (int i = 0; i< m.getRowsCount(); i++){
+            for (int j = 0; j < m.getColumnsCount(); j++) {
+                System.out.print(m.getValue(i,j) + " ");
+            }
+            System.out.print("\n");
+        }
     }
 
     //_Constructors__________________________________________________

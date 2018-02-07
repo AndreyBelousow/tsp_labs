@@ -2,35 +2,22 @@ package com.company;
 
 import com.company.model.Matrix;
 
-import java.util.Random;
+import java.io.IOException;
 
 public class Main {
+
+    public static final int serverPort = 1337;
+    public static final String serverIp = "127.0.0.1";
 
     public static void main(String[] args) {
 
         System.out.println("Client is started\n__________________");
 
-        //_TEST___________________________________________________
-        /*
-        Matrix m = new Matrix(5,5);
+        Tools tools = new Tools();
 
-        Random random = new Random();
-        for (int i=0; i<m.getRowsCount(); i++){
-            for (int j = 0; j<m.getColumnsCount(); j++){
-                m.setValue(i,j, random.nextFloat()*10);
-            }
-        }
+        Matrix a = tools.askUserForInputFile("first matrix");
+        Matrix b = tools.askUserForInputFile("second matrix");
 
-        Matrix.writeToFile(m, "test.txt");
-
-        m = Matrix.readFromFile("test.txt");
-
-        for (int i = 0; i< m.getRowsCount(); i++){
-            for (int j = 0; j < m.getColumnsCount(); j++) {
-                System.out.print(m.getValue(i,j) + " ");
-            }
-            System.out.print("\n");
-        }*/
-       //__________________________________________________________
+        tools.connectToServer(serverIp, serverPort);
     }
 }
