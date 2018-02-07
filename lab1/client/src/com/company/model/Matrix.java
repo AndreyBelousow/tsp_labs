@@ -2,12 +2,11 @@ package com.company.model;
 
 import com.company.model.exceptions.IllegalMatrixDimensionsException;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Matrix implements Serializable{
 
@@ -45,30 +44,58 @@ public class Matrix implements Serializable{
     }
 
     /**
-     * Serializes Matrix to specified file
+     * Writes Matrix to specified file
      * @param param Matrix
      * @param path file location
-     * @throws IOException
      */
-    public static void writeToFile(Matrix param, String path) throws IOException{
-        FileOutputStream fos = new FileOutputStream(path);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(param);
-        oos.flush();
-        oos.close();
+    public static void writeToFile(Matrix param, String path) {
+
+        StringBuilder data = new StringBuilder();
+        for (int i=0; i<param.getRowsCount();i++){
+            for (int j= 0; j<param.getColumnsCount(); j++){
+                data.append(param.getValue(i,j));
+                data.append(" ");
+            }
+            data.append("\n");
+        }
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+            writer.write(data.toString());
+            writer.flush();
+            writer.close();
+        }
+        catch (IOException e){
+            System.err.println(e);
+        }
     }
 
     /**
-     * Deserializes Matrix from a specified file
+     * Reads Matrix from a specified file
      * @param path file location
      * @return Matrix
-     * @throws IOException in case of file doesn't exist
-     * @throws ClassNotFoundException in case of deserialization fail
      */
-    public static Matrix readFromFile(String path) throws IOException, ClassNotFoundException{
-        FileInputStream fis = new FileInputStream(path);
-        ObjectInputStream oin = new ObjectInputStream(fis);
-        Matrix res = (Matrix) oin.readObject();
+    public static Matrix readFromFile(String path) {
+
+        List<List<String>> lines = new ArrayList<List<String>>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+
+            String data = null;
+            while ((data = reader.readLine()) != null) {
+                lines.add(Arrays.asList(data.split(" ")));
+            }
+        } catch (IOException e) {
+            System.err.println(e);
+        }
+
+        Matrix res = new Matrix(lines.size(), lines.get(0).size());
+
+        for (int i = 0; i < res.getRowsCount(); i++) {
+            for (int j = 0; j < res.getColumnsCount(); j++) {
+                res.setValue(i,j, Float.parseFloat(lines.get(i).get(j)));
+            }
+        }
+
         return res;
     }
 
