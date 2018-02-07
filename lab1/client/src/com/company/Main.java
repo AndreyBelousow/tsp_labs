@@ -10,6 +10,7 @@ public class Main {
 
         System.out.println("Client is started\n__________________");
 
+        //_TEST___________________________________________________
         /*
         Matrix m = new Matrix(5,5);
 
@@ -20,8 +21,16 @@ public class Main {
             }
         }
 
-        Matrix.writeToFile(m, "test.txt");*/
+        Matrix.writeToFile(m, "test.txt");
 
+        m = Matrix.readFromFile("test.txt");
 
+        for (int i = 0; i< m.getRowsCount(); i++){
+            for (int j = 0; j < m.getColumnsCount(); j++) {
+                System.out.print(m.getValue(i,j) + " ");
+            }
+            System.out.print("\n");
+        }*/
+       //__________________________________________________________
     }
 }
