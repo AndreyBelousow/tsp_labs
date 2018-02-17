@@ -23,6 +23,7 @@ public class Main {
         if(NetworkTools.result!=null) {
             Matrix c = NetworkTools.result;
             Matrix.writeToConsole(c);
+            UserDialogueTools.askUserForOutputFile(c);
         }
     }
 }

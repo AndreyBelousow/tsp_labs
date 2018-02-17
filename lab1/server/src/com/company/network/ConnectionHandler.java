@@ -3,9 +3,7 @@ package com.company.network;
 import com.company.model.Matrix;
 import com.company.model.exceptions.IllegalMatrixDimensionsException;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.Socket;
 
 public class ConnectionHandler implements Runnable{
@@ -16,11 +14,12 @@ public class ConnectionHandler implements Runnable{
     public void run() {
         try {
             System.out.printf("Client connected from %s:%s\n", clientSocket.getInetAddress(), clientSocket.getPort());
-            ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
-            ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
+            ObjectOutputStream oos = new ObjectOutputStream(new DataOutputStream(clientSocket.getOutputStream()));
+            ObjectInputStream ois = new ObjectInputStream(new DataInputStream(clientSocket.getInputStream()));
 
             Matrix a = (Matrix) ois.readObject();
             Matrix b = (Matrix) ois.readObject();
+
             try {
                 Matrix c = Matrix.multiply(a, b);
                 oos.writeObject(c);

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class NetworkTools {
 
-    private static ClientSocket socket;
+    private static ClientSocket client;
 
     public static Matrix result;
 
@@ -17,7 +17,7 @@ public class NetworkTools {
 
         while(true) {
             try {
-                socket = new ClientSocket(serverPort, serverIp);
+                client = new ClientSocket(serverPort, serverIp);
                 System.out.printf("Connected to %s:%s\n", serverIp, serverPort);
                 break;
             } catch (IOException e) {
@@ -34,8 +34,8 @@ public class NetworkTools {
 
     public static void sendMatrices(Matrix a, Matrix b){
         try {
-            socket.send(a);
-            socket.send(b);
+            client.send(a);
+            client.send(b);
         }
         catch (Exception e){
             System.out.println("Something bad happens");
@@ -45,7 +45,8 @@ public class NetworkTools {
     public static Matrix recieveResult() {
         Matrix res = null;
         try {
-            res = (Matrix) socket.recieve();
+            res = (Matrix) client.recieve();
+            result = res;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -1,8 +1,8 @@
 package com.company.network;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import com.company.model.Matrix;
+
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
@@ -13,14 +13,15 @@ public class ClientSocket {
 
     private Socket socket;
 
+    private ObjectOutputStream output;
+    private ObjectInputStream input;
+
     public void send(Object o) throws IOException, ClassNotFoundException {
         try{
-            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-            oos.writeObject(o);
-            oos.flush();
-            oos.close();
 
-            recieve();
+            output.writeObject(o);
+            output.flush();
+
         } catch (IOException e) {
             throw e;
         }
@@ -28,8 +29,16 @@ public class ClientSocket {
 
     public Object recieve() throws ClassNotFoundException, IOException {
         try{
-            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-            Object responce = ois.readObject();
+
+            Object responce = input.readObject();
+
+            try{
+                Matrix k = (Matrix) responce;
+            }
+            catch(Exception e){
+
+            }
+
             return responce;
         } catch (IOException e) {
             throw e;
@@ -43,6 +52,8 @@ public class ClientSocket {
         this.serverPort = serverPort;
         try {
             socket = new Socket(serverIp, serverPort);
+            input = new ObjectInputStream(new DataInputStream(socket.getInputStream()));
+            output = new ObjectOutputStream(new DataOutputStream(socket.getOutputStream()));
         } catch (IOException e) {
             throw e;
         }

@@ -25,6 +25,20 @@ public class UserDialogueTools {
     }
 
     public static void askUserForOutputFile(Matrix m) {
+        System.out.printf("Enter output file name:\n");
+        Scanner in = new Scanner(System.in);
+        while (true){
+            String path = in.nextLine();
+
+            try {
+                Matrix.writeToFile(m, path);
+                System.out.println("Writed successfuly\n");
+                System.out.println();
+                break;
+            } catch (IOException e) {
+                System.err.println("Directory not found!");
+            }
+        }
     }
 
 
