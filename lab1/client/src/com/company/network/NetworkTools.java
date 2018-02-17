@@ -42,13 +42,15 @@ public class NetworkTools {
         }
     }
 
-    public static void recieveResult() {
+    public static Matrix recieveResult() {
+        Matrix res = null;
         try {
-            System.out.println(socket.recieve());
+            res = (Matrix) socket.recieve();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return res;
     }
 }
