@@ -20,9 +20,7 @@ public class ClientSocket {
             oos.flush();
             oos.close();
 
-            int responce = (int) recieve();
-            System.out.println(responce);
-
+            recieve();
         } catch (IOException e) {
             throw e;
         }

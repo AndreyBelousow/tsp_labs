@@ -13,6 +13,7 @@ public class Main {
         System.out.println("Client is started\n__________________");
 
         NetworkTools.connectToServer(serverIp, serverPort);
+        NetworkTools.recieveResult();
 
         Matrix a = UserDialogueTools.askUserForInputFile("first matrix");
         Matrix b = UserDialogueTools.askUserForInputFile("second matrix");

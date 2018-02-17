@@ -43,7 +43,12 @@ public class NetworkTools {
     }
 
     public static void recieveResult() {
-        //TODO impl
-        result = new Matrix(0,0);
+        try {
+            System.out.println(socket.recieve());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
