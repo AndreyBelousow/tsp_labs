@@ -10,7 +10,7 @@ public class MutiThreadedServer {
 
     private ServerSocket server;
 
-    static ExecutorService executeIt;
+    private static ExecutorService executeIt;
 
     public MutiThreadedServer(int port, int maxThreadsNumber) throws IOException {
 

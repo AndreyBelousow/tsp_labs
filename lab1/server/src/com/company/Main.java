@@ -4,7 +4,7 @@ import com.company.network.NetworkTools;
 
 public class Main {
 
-    public static final int port = 1488;
+    public static final int port = 8080;
     public static final int threads = 10;
 
     public static void main(String[] args) {

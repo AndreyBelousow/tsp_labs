@@ -16,7 +16,6 @@ public class UserDialogueTools {
             try {
                 Matrix m = Matrix.readFromFile(path);
                 System.out.println("Read successful\n");
-                System.out.println();
                 return m;
             } catch (IOException e) {
                 System.err.println("File is not existing or corrupted!");
@@ -33,7 +32,6 @@ public class UserDialogueTools {
             try {
                 Matrix.writeToFile(m, path);
                 System.out.println("Writed successfuly\n");
-                System.out.println();
                 break;
             } catch (IOException e) {
                 System.err.println("Directory not found!");

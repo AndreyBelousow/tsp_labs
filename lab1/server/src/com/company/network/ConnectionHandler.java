@@ -10,6 +10,9 @@ public class ConnectionHandler implements Runnable{
 
     private Socket clientSocket;
 
+    public static final String statusOk = "200 OK";
+    public static final String statusError = "500 ERROR";
+
     @Override
     public void run() {
         try {
@@ -17,19 +20,31 @@ public class ConnectionHandler implements Runnable{
             ObjectOutputStream oos = new ObjectOutputStream(new DataOutputStream(clientSocket.getOutputStream()));
             ObjectInputStream ois = new ObjectInputStream(new DataInputStream(clientSocket.getInputStream()));
 
+            oos.writeObject(statusOk);
+
             Matrix a = (Matrix) ois.readObject();
+            oos.writeObject(statusOk);
             Matrix b = (Matrix) ois.readObject();
+            oos.writeObject(statusOk);
+
+            System.out.printf("Received two matrices from %s:%s\n", clientSocket.getInetAddress(), clientSocket.getPort());
 
             try {
                 Matrix c = Matrix.multiply(a, b);
                 oos.writeObject(c);
+                System.out.printf("Sending the result to %s:%s\n", clientSocket.getInetAddress(), clientSocket.getPort());
             }
             catch (IllegalMatrixDimensionsException e){
-                oos.writeObject("Wrong matrix dimensions!");
+                System.err.printf("Wrong matrix dimensions");
+                oos.writeObject(statusError);
             }
             oos.flush();
             oos.close();
             ois.close();
+
+            System.out.printf("Closing connection with %s:%s\n\n", clientSocket.getInetAddress(), clientSocket.getPort());
+            clientSocket.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

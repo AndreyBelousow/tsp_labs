@@ -5,7 +5,7 @@ import com.company.network.NetworkTools;
 
 public class Main {
 
-    public static final int serverPort = 1488;
+    public static final int serverPort = 8080;
     public static final String serverIp = "127.0.0.1";
 
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Main {
         NetworkTools.recieveResult();
         if(NetworkTools.result!=null) {
             Matrix c = NetworkTools.result;
-            Matrix.writeToConsole(c);
+            System.out.println("Successfully receiving the result\n");
             UserDialogueTools.askUserForOutputFile(c);
         }
     }
