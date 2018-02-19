@@ -35,7 +35,7 @@ public class ConnectionHandler implements Runnable{
                 System.out.printf("Sending the result to %s:%s\n", clientSocket.getInetAddress(), clientSocket.getPort());
             }
             catch (IllegalMatrixDimensionsException e){
-                System.err.printf("Wrong matrix dimensions");
+                System.err.printf("Wrong matrix dimensions\n");
                 oos.writeObject(statusError);
             }
             oos.flush();

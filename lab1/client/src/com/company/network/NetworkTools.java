@@ -61,9 +61,11 @@ public class NetworkTools {
         try {
             res = (Matrix) client.recieve();
             result = res;
-        } catch (ClassNotFoundException e) {
+        } catch (ClassCastException e) {
+            System.out.println(">> Can't multiply matrices: wrong dimensions");
+        }catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
         }
         return res;
