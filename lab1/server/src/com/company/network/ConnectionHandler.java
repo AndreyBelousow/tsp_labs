@@ -12,6 +12,8 @@ public class ConnectionHandler implements Runnable{
 
     public static final String statusOk = "200 OK";
     public static final String statusError = "500 ERROR";
+    public static final String statusWrongMatrices = "WRONG_MATRICES";
+
 
     private enum ServerState {
         initialized,
@@ -87,8 +89,13 @@ public class ConnectionHandler implements Runnable{
     private void getAndProcessMatrices() throws IOException, ClassNotFoundException {
         Matrix a = (Matrix) input.readObject();
         output.writeObject(statusOk);
+
+        output.flush();
+
         Matrix b = (Matrix) input.readObject();
         output.writeObject(statusOk);
+
+        output.flush();
 
         System.out.printf("Received two matrices from %s:%s\n",
                 clientSocket.getInetAddress(), clientSocket.getPort());
@@ -96,9 +103,10 @@ public class ConnectionHandler implements Runnable{
             result = Matrix.multiply(a, b);
             state = ServerState.sendingResult;
             output.writeObject(statusOk);
+            output.flush();
         } catch (IllegalMatrixDimensionsException e) {
             System.err.printf("Wrong matrix dimensions\n");
-            output.writeObject(statusError);
+            output.writeObject(statusWrongMatrices);
             state = ServerState.exiting;
         }
     }
@@ -107,6 +115,7 @@ public class ConnectionHandler implements Runnable{
         System.out.printf("Sending the result to %s:%s\n",
                 clientSocket.getInetAddress(), clientSocket.getPort());
         output.writeObject(result);
+        output.flush();
         state = ServerState.exiting;
     }
 
@@ -116,14 +125,14 @@ public class ConnectionHandler implements Runnable{
                     clientSocket.getInetAddress(),
                     clientSocket.getPort());
 
-            switch (state){
+           /* switch (state){
                 case error:
                     output.writeObject(statusError);
                     break;
                 case exiting:
                     output.writeObject(statusOk);
                     break;
-            }
+            }*/
 
             output.flush();
             output.close();

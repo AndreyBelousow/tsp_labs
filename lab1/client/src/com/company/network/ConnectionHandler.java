@@ -104,11 +104,13 @@ public class ConnectionHandler {
     }
 
     private void recieveResult() throws IOException, ClassNotFoundException {
-        Matrix res = null;
-        //TODO
-        res = (Matrix) client.recieve();
-        result = res;
-
+        String responce = (String) client.recieve();
+        if(responce.equals(statusOk)){
+            result = (Matrix) client.recieve();
+            state = ClientState.exiting;
+        } else if (responce.equals(statusWrongMatrices)){
+            state = ClientState.wrongMatrices;
+        }
     }
 
 }
