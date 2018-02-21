@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.model.Matrix;
-import com.company.network.NetworkTools;
+import com.company.network.ConnectionHandler;
 
 public class Main {
 
@@ -12,18 +12,10 @@ public class Main {
 
         System.out.println("Client is started\n__________________");
 
-        NetworkTools.connectToServer(serverIp, serverPort);
-
         Matrix a = UserDialogueTools.askUserForInputFile("first matrix");
         Matrix b = UserDialogueTools.askUserForInputFile("second matrix");
 
-        NetworkTools.sendMatrices(a, b);
-
-        NetworkTools.recieveResult();
-        if(NetworkTools.result!=null) {
-            Matrix c = NetworkTools.result;
-            System.out.println("Successfully receiving the result\n");
-            UserDialogueTools.askUserForOutputFile(c);
-        }
+        ConnectionHandler connectionHandler = new ConnectionHandler();
+        connectionHandler.run(serverIp, serverPort, a, b);
     }
 }

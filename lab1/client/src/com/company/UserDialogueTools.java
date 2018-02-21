@@ -12,7 +12,6 @@ public class UserDialogueTools {
         Scanner in = new Scanner(System.in);
         while (true){
             String path = in.nextLine();
-
             try {
                 Matrix m = Matrix.readFromFile(path);
                 System.out.println("Read successful\n");
@@ -28,7 +27,6 @@ public class UserDialogueTools {
         Scanner in = new Scanner(System.in);
         while (true){
             String path = in.nextLine();
-
             try {
                 Matrix.writeToFile(m, path);
                 System.out.println("Writed successfuly\n");
