@@ -1,5 +1,6 @@
 package com.company.network;
 
+import com.company.UserDialogueTools;
 import com.company.model.Matrix;
 
 import java.io.IOException;
@@ -11,58 +12,21 @@ public class ConnectionHandler {
 
     public static final String statusOk = "200 OK";
     public static final String statusError = "500 ERROR";
-    public static final String statusWrongMatrices = "WRONG_MATRICES";
 
-    public static Matrix result;
-
-    private enum ClientState {
-        initialized,
-        waitingForServerConfirmation,
-        sendingMatrices,
-        recievingResult,
-        exiting,
-        wrongMatrices,
-        error
-    }
-
-    private ClientState state  = ClientState.initialized;
-
-    public String run(String serverIp, int serverPort, Matrix a, Matrix b){
-
-        while (true){
+    public void run(String serverIp, int serverPort, Matrix a, Matrix b){
 
             try {
-                switch (state) {
-                    case initialized:
-                        connectToServer(serverIp, serverPort);
-                        break;
-                    case waitingForServerConfirmation:
-                        getServerConfirmation();
-                        break;
-                    case sendingMatrices:
-                        sendMatrices(a, b);
-                        break;
-                    case recievingResult:
-                        recieveResult();
-                }
-            } catch (IOException e) {
+                connectToServer(serverIp, serverPort);
+                getServerConfirmation();
+                sendMatrices(a, b);
+                recieveResult();
+            }catch (IOException e) {
                 System.err.println("Can't handle connection!");
-                state = ClientState.error;
             } catch (ClassNotFoundException e) {
                 System.err.println("Class not found!");
-                state = ClientState.error;
-            } catch (ClassCastException e){
+            } catch (ClassCastException e) {
                 System.err.println("Can't parse data!");
-                state = ClientState.error;
             }
-
-            if(state == ClientState.error)
-                return statusError;
-            if(state == ClientState.exiting)
-                return statusOk;
-            if(state == ClientState.wrongMatrices)
-                return statusWrongMatrices;
-        }
     }
 
     private void connectToServer(String serverIp, int serverPort){
@@ -74,7 +38,6 @@ public class ConnectionHandler {
                 client = new ClientSocket(serverPort, serverIp);
                 System.out.printf("Connected to %s:%s\n", serverIp, serverPort);
                 client.send(statusOk);
-                state = ClientState.waitingForServerConfirmation;
                 break;
             } catch (IOException e) {
                 System.out.printf("Looks like there is no server on %s:%s\n", serverIp, serverPort);
@@ -90,7 +53,6 @@ public class ConnectionHandler {
 
     private void getServerConfirmation() throws IOException, ClassNotFoundException {
         client.recieve();
-        state = ClientState.sendingMatrices;
     }
 
     private void sendMatrices(Matrix a, Matrix b) throws IOException, ClassNotFoundException {
@@ -100,16 +62,15 @@ public class ConnectionHandler {
         System.out.println("Sending...\n");
         client.send(b);
         System.out.printf(">> %s\n", client.recieve());
-        state = ClientState.recievingResult;
     }
 
     private void recieveResult() throws IOException, ClassNotFoundException {
         String responce = (String) client.recieve();
         if(responce.equals(statusOk)){
-            result = (Matrix) client.recieve();
-            state = ClientState.exiting;
-        } else if (responce.equals(statusWrongMatrices)){
-            state = ClientState.wrongMatrices;
+            Matrix result = (Matrix) client.recieve();
+            UserDialogueTools.askUserForOutputFile(result);
+        } else {
+            UserDialogueTools.askUserForOutputFile(responce);
         }
     }
 

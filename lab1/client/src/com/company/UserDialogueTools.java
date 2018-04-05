@@ -2,6 +2,8 @@ package com.company;
 
 import com.company.model.Matrix;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -22,13 +24,21 @@ public class UserDialogueTools {
         }
     }
 
-    public static void askUserForOutputFile(Matrix m) {
+    public static void askUserForOutputFile(Object result) {
         System.out.printf("Enter output file name:\n");
         Scanner in = new Scanner(System.in);
         while (true){
             String path = in.nextLine();
             try {
-                Matrix.writeToFile(m, path);
+                try {
+                    Matrix matrix = (Matrix) result;
+                    Matrix.writeToFile(matrix, path);
+                } catch (Exception e) {
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+                    writer.write(result.toString());
+                    writer.flush();
+                    writer.close();
+                }
                 System.out.println("Writed successfuly\n");
                 break;
             } catch (IOException e) {

@@ -16,18 +16,6 @@ public class Main {
         Matrix b = UserDialogueTools.askUserForInputFile("second matrix");
 
         ConnectionHandler connectionHandler = new ConnectionHandler();
-        String status = connectionHandler.run(serverIp, serverPort, a, b);
-
-        switch (status){
-            case ConnectionHandler.statusError:
-                System.err.println("Something bad happens\n");
-                break;
-            case ConnectionHandler.statusWrongMatrices:
-                System.out.println("Wrong matrix dimensions!\n");
-                break;
-            case ConnectionHandler.statusOk:
-                UserDialogueTools.askUserForOutputFile(ConnectionHandler.result);
-                break;
-        }
+        connectionHandler.run(serverIp, serverPort, a, b);
     }
 }

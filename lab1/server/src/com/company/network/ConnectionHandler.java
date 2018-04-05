@@ -12,19 +12,7 @@ public class ConnectionHandler implements Runnable{
 
     public static final String statusOk = "200 OK";
     public static final String statusError = "500 ERROR";
-    public static final String statusWrongMatrices = "WRONG_MATRICES";
 
-
-    private enum ServerState {
-        initialized,
-        waitingForClientConfirmation,
-        waitingForMatrices,
-        sendingResult,
-        exiting,
-        error
-    }
-
-    private ServerState state = ServerState.initialized;
     private Matrix result;
 
     private ObjectOutputStream output;
@@ -32,44 +20,20 @@ public class ConnectionHandler implements Runnable{
 
     @Override
     public void run() {
-
         try {
             output = new ObjectOutputStream(clientSocket.getOutputStream());
             input = new ObjectInputStream(clientSocket.getInputStream());
-        }catch (IOException e) {
+
+            sendConfirmation();
+            getClientConfirmation();
+            getAndProcessMatrices();
+            sendResult();
+        } catch (IOException e) {
             System.err.println("Can't handle connection!");
-            state = ServerState.error;
-        }
-
-        while (true) {
-            try {
-                switch (state) {
-                    case initialized:
-                        sendConfirmation();
-                        break;
-                    case waitingForClientConfirmation:
-                        getClientConfirmation();
-                        break;
-                    case waitingForMatrices:
-                        getAndProcessMatrices();
-                        break;
-                    case sendingResult:
-                        sendResult();
-                        break;
-                }
-            } catch (IOException e) {
-                System.err.println("Can't handle connection!");
-                state = ServerState.error;
-            } catch (ClassNotFoundException e) {
-                System.err.println("Class not found!");
-                state = ServerState.error;
-            } catch (ClassCastException e) {
-                System.err.println("Can't parse data!");
-                state = ServerState.error;
-            }
-
-            if (state == ServerState.error || state == ServerState.exiting)
-                break;
+        } catch (ClassNotFoundException e) {
+            System.err.println("Class not found!");
+        } catch (ClassCastException e) {
+            System.err.println("Can't parse data!");
         }
         closeConnection();
     }
@@ -78,12 +42,10 @@ public class ConnectionHandler implements Runnable{
         System.out.printf("Client connected from %s:%s\n",
                 clientSocket.getInetAddress(), clientSocket.getPort());
         output.writeObject(statusOk);
-        state = ServerState.waitingForClientConfirmation;
     }
 
     private void getClientConfirmation() throws IOException, ClassNotFoundException {
         String response = (String) input.readObject();
-        state = ServerState.waitingForMatrices;
     }
 
     private void getAndProcessMatrices() throws IOException, ClassNotFoundException {
@@ -101,13 +63,11 @@ public class ConnectionHandler implements Runnable{
                 clientSocket.getInetAddress(), clientSocket.getPort());
         try {
             result = Matrix.multiply(a, b);
-            state = ServerState.sendingResult;
             output.writeObject(statusOk);
             output.flush();
         } catch (IllegalMatrixDimensionsException e) {
             System.err.printf("Wrong matrix dimensions\n");
-            output.writeObject(statusWrongMatrices);
-            state = ServerState.exiting;
+            output.writeObject("Wrong matrix dimensions");
         }
     }
 
@@ -116,7 +76,6 @@ public class ConnectionHandler implements Runnable{
                 clientSocket.getInetAddress(), clientSocket.getPort());
         output.writeObject(result);
         output.flush();
-        state = ServerState.exiting;
     }
 
     private void closeConnection(){
@@ -124,15 +83,6 @@ public class ConnectionHandler implements Runnable{
             System.out.printf("Closing connection with %s:%s\n\n",
                     clientSocket.getInetAddress(),
                     clientSocket.getPort());
-
-           /* switch (state){
-                case error:
-                    output.writeObject(statusError);
-                    break;
-                case exiting:
-                    output.writeObject(statusOk);
-                    break;
-            }*/
 
             output.flush();
             output.close();

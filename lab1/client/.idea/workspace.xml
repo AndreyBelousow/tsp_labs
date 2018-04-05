@@ -18,8 +18,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="66">
+              <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,13 +30,21 @@
       <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/network/ConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="912">
-              <caret line="96" column="43" lean-forward="true" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
+            <state relative-caret-position="891">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#connectToServer#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="method#getServerConfirmation#0;class#ConnectionHandler#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="res.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,8 +62,8 @@
       <file leaf-file-name="b.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/b.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,8 +72,8 @@
       <file leaf-file-name="UserDialogueTools.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/UserDialogueTools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
-              <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+            <state relative-caret-position="488">
+              <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,11 +84,9 @@
       <file leaf-file-name="ClientSocket.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/network/ClientSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="99">
+              <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,15 +94,13 @@
       <file leaf-file-name="Matrix.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/model/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="77" column="70" lean-forward="false" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+            <state relative-caret-position="-168">
+              <caret line="24" column="95" lean-forward="false" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
                 <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-                <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
                 <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-                <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
                 <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
                 <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
                 <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -130,19 +134,19 @@
         <option value="$PROJECT_DIR$/src/com/company/ClientSocket.java" />
         <option value="$PROJECT_DIR$/src/com/company/UserDialog.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tools.java" />
-        <option value="$PROJECT_DIR$/src/com/company/UserDialogueTools.java" />
         <option value="$PROJECT_DIR$/src/com/company/network/NetworkTools.java" />
         <option value="$PROJECT_DIR$/a.txt" />
-        <option value="$PROJECT_DIR$/b.txt" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/network/ConnectionHandler.java" />
         <option value="$PROJECT_DIR$/src/com/company/network/ClientSocket.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/UserDialogueTools.java" />
+        <option value="$PROJECT_DIR$/src/com/company/network/ConnectionHandler.java" />
+        <option value="$PROJECT_DIR$/b.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="43" />
+    <option name="y" value="355" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
@@ -161,7 +165,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,8 +210,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -319,21 +323,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/network/ConnectionHandler.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/network/ClientSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/model/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -342,9 +344,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -375,8 +375,6 @@
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#connectToServer#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#getServerConfirmation#0;class#ConnectionHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -399,9 +397,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -413,9 +409,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="40" column="77" lean-forward="true" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -435,8 +429,6 @@
           <caret line="46" column="40" lean-forward="false" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#connectToServer#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#getServerConfirmation#0;class#ConnectionHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -455,9 +447,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -469,9 +459,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -500,9 +488,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -521,9 +507,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -562,9 +546,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -583,9 +565,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -618,9 +598,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -632,9 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,9 +646,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -705,9 +679,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -733,9 +705,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -761,9 +731,7 @@
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -800,6 +768,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/UserDialogueTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/a.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -810,23 +788,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/b.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/model/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="77" column="70" lean-forward="false" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+        <state relative-caret-position="-168">
+          <caret line="24" column="95" lean-forward="false" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="95" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#matrix#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#multiply#0;class#Matrix#0" expanded="false" />
-            <element signature="method#multiply#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#writeToFile#0;class#Matrix#0" expanded="false" />
-            <element signature="method#writeToFile#0;class#Matrix#0" expanded="false" />
             <element signature="docComment;method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#readFromFile#0;class#Matrix#0" expanded="false" />
             <element signature="method#writeToConsole#0;class#Matrix#0" expanded="false" />
@@ -836,18 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/UserDialogueTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+        <state relative-caret-position="66">
+          <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -856,23 +830,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/network/ConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="96" column="43" lean-forward="true" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
+        <state relative-caret-position="891">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#connectToServer#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#getServerConfirmation#0;class#ConnectionHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/network/ClientSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="99">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
