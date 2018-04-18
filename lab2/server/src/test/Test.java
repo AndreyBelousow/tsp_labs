@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Test {
 
-    public static BufferedImage loadFormFile(String path){
+    public static BufferedImage loadImageFormFile(String path){
         BufferedImage image = null;
         try {
             File file = new File(path);
@@ -20,7 +20,7 @@ public class Test {
         return image;
     }
 
-    public static void writeToFile(BufferedImage image, String fileName, String extension) {
+    public static void saveImageToFile(BufferedImage image, String fileName, String extension) {
         File file = new File(fileName + "." + extension);
         try {
             ImageIO.write(image, extension, file);
@@ -30,11 +30,11 @@ public class Test {
     }
 
     public static void run(){
-        BufferedImage source = loadFormFile("source.jpg");
+        BufferedImage source = loadImageFormFile("source.jpg");
 
-        ImageHandler imageHandler = new ImageHandler();
-        BufferedImage result = imageHandler.convolutionFilter(source);
+        BufferedImage result = ImageHandler.convolutionFilter(
+                source, ImageHandler.CONTRAST_FILTER_KERNEL, ImageHandler.CONTRAST_FILTER_DIV);
 
-        writeToFile(result, "result", "png");
+        saveImageToFile(result, "result", "png");
     }
 }
