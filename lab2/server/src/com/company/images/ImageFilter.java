@@ -7,9 +7,11 @@ import java.awt.image.BufferedImage;
 public class ImageFilter {
 
     public static final float[][] CONTRAST_FILTER_KERNEL =
-           {{-1, -1, -1},
-            {-1,  9, -1},
-            {-1, -1, -1}};
+           {{-1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1},
+            {-1, -1, 25, -1, -1},
+            {-1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1}};
 
     public static final float CONTRAST_FILTER_DIV = 1;
 

@@ -30,7 +30,7 @@ public class Test {
     }
 
     public static void run(){
-        BufferedImage source = loadImageFormFile("testImages/earth.jpg");
+        BufferedImage source = loadImageFormFile("testImages/lines.jpg");
 
         BufferedImage result = ImageFilter.applyConvolutionFilter(
                 source, ImageFilter.CONTRAST_FILTER_KERNEL, ImageFilter.CONTRAST_FILTER_DIV);
