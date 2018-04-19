@@ -1,6 +1,6 @@
 package test;
 
-import com.company.ImageHandler;
+import com.company.images.ImageFilter;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -30,11 +30,11 @@ public class Test {
     }
 
     public static void run(){
-        BufferedImage source = loadImageFormFile("source.jpg");
+        BufferedImage source = loadImageFormFile("testImages/earth.jpg");
 
-        BufferedImage result = ImageHandler.convolutionFilter(
-                source, ImageHandler.CONTRAST_FILTER_KERNEL, ImageHandler.CONTRAST_FILTER_DIV);
+        BufferedImage result = ImageFilter.applyConvolutionFilter(
+                source, ImageFilter.CONTRAST_FILTER_KERNEL, ImageFilter.CONTRAST_FILTER_DIV);
 
-        saveImageToFile(result, "result", "png");
+        saveImageToFile(result, "testImages/result", "png");
     }
 }
