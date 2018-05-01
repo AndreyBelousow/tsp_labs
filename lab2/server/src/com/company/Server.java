@@ -1,11 +1,16 @@
 package com.company;
 
-import test.Test;
+import com.company.rmi.ImageHandlerImpl;
+import com.company.rmi.IRemoteImageHandler;
 
 import java.net.MalformedURLException;
+import java.rmi.AlreadyBoundException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.ExportException;
+import java.rmi.server.UnicastRemoteObject;
 
 public class Server {
 
@@ -13,12 +18,16 @@ public class Server {
 
         System.out.println("\nServer started\n");
 
-        Test.run();
+        IRemoteImageHandler imageHandler = new ImageHandlerImpl();
 
-        RemoteImageHandler imageHandler = new ImageHandlerImpl();
-
-        LocateRegistry.createRegistry(1337);
-        Naming.rebind("server.proceedImage", imageHandler);
+        Registry registry = LocateRegistry.createRegistry(1099);
+        try {
+            registry.bind(IRemoteImageHandler.class.getSimpleName(), imageHandler);
+        } catch (AlreadyBoundException e) {
+            System.out.println("Naming is already bind!");
+        } catch (ExportException e){
+            System.out.println("Object is already exported!");
+        }
         System.out.println("RMI is ready.");
     }
 }

@@ -1,13 +1,11 @@
-package test;
-
-import com.company.images.ImageFilter;
+package com.company;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Test {
+public class ImageLoadingTools {
 
     public static BufferedImage loadImageFormFile(String path){
         BufferedImage image = null;
@@ -27,14 +25,5 @@ public class Test {
         } catch(IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void run(){
-        BufferedImage source = loadImageFormFile("testImages/keys.jpg");
-
-        BufferedImage result = ImageFilter.applyConvolutionFilter(
-                source, ImageFilter.CONTRAST_FILTER_KERNEL, ImageFilter.CONTRAST_FILTER_DIV);
-
-        saveImageToFile(result, "testImages/result", "png");
     }
 }
