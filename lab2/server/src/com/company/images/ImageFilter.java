@@ -6,6 +6,10 @@ import java.awt.image.BufferedImage;
 
 public class ImageFilter {
 
+//    private class Color {
+//        int r, g, b;
+//    }
+
     public static final float[][] CONTRAST_FILTER_KERNEL =
            {{-1, -1, -1, -1, -1},
             {-1, -1, -1, -1, -1},

@@ -6,7 +6,5 @@ import java.rmi.RemoteException;
 
 public interface RemoteImageHandler extends Remote{
 
-    final String name = "ImageHandlerServer";
-
     BufferedImage processImage(BufferedImage source) throws RemoteException;
 }
