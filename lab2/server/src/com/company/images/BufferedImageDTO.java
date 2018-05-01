@@ -7,6 +7,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/**
+ *  BufferedImage doesn't implements Serializable,
+ *  so here's the serializable wrapper for it
+ */
 public class BufferedImageDTO implements Serializable{
 
     private transient BufferedImage image;
