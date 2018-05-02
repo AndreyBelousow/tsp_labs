@@ -18,10 +18,10 @@ public class ImageLoadingTools {
         return image;
     }
 
-    public static void saveImageToFile(BufferedImage image, String fileName, String extension) {
-        File file = new File(fileName + "." + extension);
+    public static void saveImageToFile(BufferedImage image, String fileName) {
+        File file = new File(fileName);
         try {
-            ImageIO.write(image, extension, file);
+            ImageIO.write(image, "png", file);
         } catch(IOException e) {
             e.printStackTrace();
         }

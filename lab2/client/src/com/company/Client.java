@@ -67,7 +67,7 @@ public class Client {
             String path = in.nextLine();
 
             try {
-                ImageLoadingTools.saveImageToFile(image, path, "png");
+                ImageLoadingTools.saveImageToFile(image, path);
             } catch (Exception e){
                 System.out.println("Path or file is invalid!");
                 continue;

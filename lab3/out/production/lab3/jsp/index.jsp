@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<h1>Lorem ipsum</h1>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum
+</p>
+
+Текущая дата: <%= new java.util.Date()%>
+
+<form>
+    First argument:<br>
+    <input type="text" name="first"><br>
+    Second argument:<br>
+    <input type="text" name="second">
+</form>
+
+<button type="submit" onclick="window.location.href='result.html'">Compute</button>
+
+</body>
+</html>
