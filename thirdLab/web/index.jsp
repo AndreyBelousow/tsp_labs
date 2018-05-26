@@ -1,52 +1,47 @@
-<%@ page import="task.TaskData" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page import= "task.TaskData" %>
+
+useBean id="task" class="task.TaskData" scope="session"/>
+<jsp:setProperty name="task" property="*"/>
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Вычисления</title>
-  <link rel="stylesheet" href="resource/style.css">
+    <meta charset="UTF-8">
+    <title>Logarithm - source</title>
+    <link rel="stylesheet" href="./resource/html/css/main.css">
 </head>
 <body>
 
-<div id="description">
-  <h4>
-    Данный ресурс выполняет следующую обработку вводимых данных:<br>
-    Вы вводите делимое и делитель в поля, расположенные ниже.<br>
-    Далее произойдет деление после нажатия на кнопку.<br>
-    Результат будет показан на экране.<br>
-    Так же можно скачать результат работы в виде xml файла.
-  </h4>
-</div>
+<h1>КАЛЬКУЛЯТОР ЛОГАРИФМА</h1>
+<h2>Вычисляет логарифм первого аргумента по основанию второго</h2>
 
-<%
-  request.setCharacterEncoding("UTF-8");
-  String text = request.getParameter("Text");
-  String subString = request.getParameter("SubText");
-  TaskData task = new TaskData();
-  if (text != null && !text.isEmpty() && subString!= null && !subString.isEmpty()) {
-    task = new TaskData(text, subString);
-    request.getSession().setAttribute("MyTask",task);
-  }
-%>
-
-<%if (task.status()) {%>
-<jsp:forward page="resource/result.html"/>
-<%} %>
-
-<form action="index.jsp" id="myForm" method="post">
-  <div>
-    <h4 id="text">Делимое:</h4> <input type="text" name="Text" id="textField1" placeholder=""
-                                       onkeyup="return proverka(this);" onchange="return proverka(this);" ><br>
-    <h4 id="text">Делитель:</h4> <input type="text" name="SubText" id="textField2" placeholder=""
-                                        onkeyup="return proverka(this);" onchange="return proverka(this);" ><br>
-  </div>
-  <div>
-    <form>
-      <button type="submit" onclick="checkInputData()" name="but" id="butRes">Подтвердить</button>
-    </form>
-  </div>
+<form action="index.jsp" id="inputForm">
+    <p>
+        <label for="argument">Первый аргумент</label><br>
+        <input type="number" id="argument" name="argument" placeholder="Введите аргумент"/>
+    </p>
+    <p>
+        <label for="base">Второй аргумент</label><br>
+        <input type="number" id="base" name="base" placeholder="Введите основание"/>
+    </p>
+    <p>
+        <button class="submit" onclick="checkInputData()" type="submit" >Вычислить</button>
+    </p>
 </form>
 
+<%
+    request.setCharacterEncoding("UTF-8");
+    double arg = Double.parseDouble(request.getParameter("argument"));
+    double base = Double.parseDouble(request.getParameter("base"));
+    TaskData task = new TaskData(arg, base);
+    request.getSession().setAttribute("task",task);
+%>
+
+<%if (task.status()){%>
+<jsp:forward page="result.jsp"/>
+<%}
+%>
 
 <script>
     function checkInputData() {
@@ -74,5 +69,6 @@
 
 
 </script>
+
 </body>
 </html>

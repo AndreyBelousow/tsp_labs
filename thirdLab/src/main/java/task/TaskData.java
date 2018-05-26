@@ -9,62 +9,63 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
 public class TaskData implements Serializable{
-    private String text;
-    private String subString;
+
+    private double arg = Double.NaN;
+    private double base = Double.NaN;
+
     @XmlTransient
     private boolean status = false;
-    private String newText = null;
+    private double result = Double.NaN;
 
     public TaskData() {
     }
 
-    public TaskData(String text, String subString) {
-        this.text = text;
-        this.subString = subString;
+    public TaskData(double arg, double base) {
+        this.arg = arg;
+        this.base = base;
     }
 
 
     public boolean status() {
         if (!status) {
-            if (text != null && subString != null) {
-                status = true;
-                return status;
-            }
+            status = !Double.isNaN(arg) && !Double.isNaN(base);
         }
         return status;
     }
 
     public void performTask() {
-        if (newText == null) {
-            //newText = text.replaceAll(subString,"");
-            double a, b;
-            a= Double.parseDouble(text);
-            b=Double.parseDouble(subString);
-            newText=  String.valueOf( a/b);
-        }
+        result = (Math.log(arg) / Math.log(base));
     }
 
-    public String getText() {
-        return text;
+    public Double getArg() {
+        return arg;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setArg(Double arg) {
+        this.arg = arg;
     }
 
-    public String getSubString() {
-        return subString;
+    public Double getBase() {
+        return base;
     }
 
-    public void setSubString(String subString) {
-        this.subString = subString;
+    public void setBase(Double base) {
+        this.base = base;
+    }
+
+    public boolean isStatus() {
+        return status;
     }
 
     public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public String getNewText() {
-        return newText;
+    public Double getResult() {
+        return result;
+    }
+
+    public void setResult(float result) {
+        this.result = result;
     }
 }

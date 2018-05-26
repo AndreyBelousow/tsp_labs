@@ -7,17 +7,17 @@ body {
 }
 h1 {
     margin-left: 300px;
-    color: whitesmoke; /* Цвет заголовка */
-    font-size: 48pt; /* Размер шрифта в пунктах */
-    font-family: Impact; /* Семейство шрифтов */
-    font-weight: normal; /* Нормальное начертание текста */
+    color: whitesmoke;
+    font-size: 48pt;
+    font-family: Impact;
+    font-weight: normal;
 }
 h2{
     margin-left: 300px;
-    color: gray; /* Цвет заголовка */
-    font-size: 19pt; /* Размер шрифта в пунктах */
-    font-family: Helvetica; /* Семейство шрифтов */
-    font-weight: normal; /* Нормальное начертание текста */
+    color: gray;
+    font-size: 19pt;
+    font-family: Helvetica;
+    font-weight: normal;
 }
 p{
     margin-left: 300px;
@@ -40,13 +40,13 @@ button{
     width: 220px;
 }
 a {
-    color: #008000; /* Цвет обычной ссылки */
-    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: lightgray;
+    text-decoration: none;
 }
 a:visited {
-    color: #800080; /* Цвет посещённой ссылки */
+    color: gray;
 }
 a:hover {
-    color: #800000; /* Цвет ссылки при наведении на нее курсора мыши */
-    text-decoration: underline; /* Добавляем подчеркивание */
+    color: white;
+    text-decoration: underline;
 }
