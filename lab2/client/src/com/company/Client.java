@@ -31,7 +31,9 @@ public class Client {
         BufferedImageDTO result = null;
 
         try {
+            System.out.println("Image send to server");
             result = stub.processImage(new BufferedImageDTO(source));
+            System.out.println("Proceeded image received from server");
         } catch (RemoteException e) {
             System.out.println("An error occurred while sending image");
         }
@@ -72,7 +74,8 @@ public class Client {
                 System.out.println("Path or file is invalid!");
                 continue;
             }
-            System.out.println(String.format("Image saved to %s", path));
+            System.out.println(String.format("Image saved to %s.png", path));
+            return;
         }
     }
 }

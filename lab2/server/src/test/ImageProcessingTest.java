@@ -30,7 +30,7 @@ public class ImageProcessingTest {
     }
 
     public static void main(String[] args){
-        BufferedImage source = loadImageFormFile("testImages/keys.jpg");
+        BufferedImage source = loadImageFormFile("testImages/lisy.jpg");
 
         BufferedImage result = ImageFilter.applyConvolutionFilter(
                 source, ImageFilter.CONTRAST_FILTER_KERNEL, ImageFilter.CONTRAST_FILTER_DIV);
